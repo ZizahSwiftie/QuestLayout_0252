@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.res.colorResource
 
 @Composable
 fun ActivitasPertama(modifier: Modifier) {
@@ -45,9 +46,29 @@ fun ActivitasPertama(modifier: Modifier) {
         Card(
             modifier = Modifier
                 .fillMaxWidth(fraction = 1f)
-                .padding(all = 12.dp)
+                .padding(all = 12.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = colorResource(id = R.color.card_0_bg)
+            )
         ) {
-
+            Row() {
+                val gambar = painterResource(id = R.drawable.logo_umy)
+                Image(
+                    painter = gambar,
+                    contentDescription = null,
+                    modifier = Modifier.size(100.dp).padding(all = 5.dp)
+                )
+                Spacer(modifier = Modifier.width(30.dp))
+                Column() {
+                    Text(
+                        text = "Nur Azizah Ulinnuha",
+                        fontSize = 22.sp,
+                        fontFamily = FontFamily.Cursive,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(text = "20240140252", fontSize = 14.sp)
+                }
+            }
         }
     }
 }
